@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#061428"/>
+  <circle cx="256" cy="256" r="180" fill="#0B1E3A"/>
+  <text x="256" y="170" font-size="110" text-anchor="middle">💪</text>
+  <text x="256" y="315" font-family="Arial" font-size="120" font-weight="700" fill="#FFFFFF" text-anchor="middle">76</text>
+  <text x="256" y="380" font-family="Arial" font-size="32" fill="#60A5FA" text-anchor="middle">SHAPE</text>
+</svg>
