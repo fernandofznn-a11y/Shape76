@@ -10,7 +10,10 @@ workflows:
       - npm install
       - npm run build
       - npx cap sync ios
-      - xcode-project build-ipa --project ios/App/App.xcodeproj --scheme App
+
+    ios_signing:
+      distribution_type: development
+      bundle_identifier: com.fernando.shape76
 
     artifacts:
       - build/ios/ipa/*.ipa
