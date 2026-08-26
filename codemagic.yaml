@@ -7,10 +7,10 @@ workflows:
       node: 22
 
     scripts:
-      - npm install
-      - npm run build
-      - npx cap sync ios
-      - xcode-project build-ipa --workspace ios/App/App.xcworkspace --scheme App
-
-    artifacts:
-      - build/ios/ipa/*.ipa
+  - npm install
+  - npm run build
+  - npx cap sync ios
+  - |
+    xcode-project build-ipa \
+      --workspace ios/App/App.xcworkspace \
+      --scheme App
