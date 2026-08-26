@@ -4,12 +4,15 @@ workflows:
 
     environment:
       node: 22.0.0
+      xcode: latest
 
     scripts:
       - npm install
       - npm run build
       - npx cap sync ios
       - cd ios/App
+      - pod install
+      - xcode-project use-profiles
       - xcode-project build-ipa --workspace App.xcworkspace --scheme App
 
     artifacts:
