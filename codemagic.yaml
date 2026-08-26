@@ -1,19 +1,17 @@
 workflows:
   ios-release:
-    name: Shape 76 iPhone
+    name: Shape76 iOS
 
     environment:
-      xcode: latest
-      node: 22
+      node: 22.0.0
 
     scripts:
       - npm install
       - npm run build
       - npx cap sync ios
-
-    ios_signing:
-      distribution_type: development
-      bundle_identifier: com.fernando.shape76
+      - xcode-project build-ipa \
+          --project ios/App/App.xcodeproj \
+          --scheme App
 
     artifacts:
       - build/ios/ipa/*.ipa
