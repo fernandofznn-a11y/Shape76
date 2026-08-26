@@ -1,0 +1,14 @@
+workflows:
+  ios-release:
+    name: Shape 76 iOS
+    instance_type: mac_mini_m2
+
+    environment:
+      node: 20
+
+    scripts:
+      - npm install
+      - npm run build
+
+    artifacts:
+      - .next/**
