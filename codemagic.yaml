@@ -3,17 +3,15 @@ workflows:
     name: Shape76 iOS
 
     environment:
-      node: 22.0.0
       xcode: latest
+      node: 22.0.0
 
     scripts:
       - npm install
       - npm run build
       - npx cap sync ios
-      - cd ios/App
-      - pod install
-      - xcode-project use-profiles
-      - xcode-project build-ipa --workspace App.xcworkspace --scheme App
+      - xcodebuild -project ios/App/App.xcodeproj -scheme App -destination "generic/platform=iOS" -archivePath build/Shape76.xcarchive archive
+      - xcodebuild -exportArchive -archivePath build/Shape76.xcarchive -exportPath build/ios/ipa -allowProvisioningUpdates
 
     artifacts:
-      - ios/App/build/ios/ipa/*.ipa
+      - build/ios/ipa/*.ipa
