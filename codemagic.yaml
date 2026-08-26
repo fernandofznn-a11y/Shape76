@@ -1,16 +1,15 @@
 workflows:
   ios-release:
     name: Shape 76 iPhone
-
     environment:
       xcode: latest
       node: 22
 
     scripts:
-  - npm install
-  - npm run build
-  - npx cap sync ios
-  - |
-    xcode-project build-ipa \
-      --workspace ios/App/App.xcworkspace \
-      --scheme App
+      - npm install
+      - npm run build
+      - npx cap sync ios
+      - xcode-project build-ipa --workspace ios/App/App.xcworkspace --scheme App
+
+    artifacts:
+      - build/ios/ipa/*.ipa
